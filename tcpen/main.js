@@ -22,16 +22,35 @@ $js.addEventListener('input', update)
 $css.addEventListener('input', update)
 $html.addEventListener('input', update)
 
-function update(){
-  const html = createHtml();
-  $('iframe').setAttribute('srcdoc', html)
+function initialize () {
+  const { pathname } = window.location;
+  const [encodedHtml, encondedCss, encodedJs] = pathname.slice(1).split('%7C')
+
+  const html= window.atob(encodedHtml);
+  const css = window.atob(encondedCss);
+  const js = window.atob(encodedJs);
+
+  $html.value = html;
+  $css.value = css;
+  $js.value = js;
+
+  const htmlPreview = createHtml({html, css, js});
+  $('iframe').setAttribute('srcdoc', htmlPreview)
 }
 
-function createHtml(){
+function update(){
   const html = $html.value;
   const css = $css.value;
   const js = $js.value; 
 
+  const hashedCode = `${window.btoa(html)}|${window.btoa(css)}|${window.btoa(js)}`
+  window.history.replaceState(null, null, `/${hashedCode}`)
+
+  const htmlPreview = createHtml({html, css, js});
+  $('iframe').setAttribute('srcdoc', htmlPreview)
+}
+
+function createHtml({html, css, js}){
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -47,3 +66,5 @@ function createHtml(){
   </html>
   `
 }
+
+initialize()
