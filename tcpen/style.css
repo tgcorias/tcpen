@@ -31,6 +31,9 @@ textarea{
     padding: 20px;
 
     background-color: #444;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position:  98% 98%;
     color: #fff;
 
     font-family: monospace; 
@@ -42,6 +45,17 @@ textarea{
 textarea:focus{
     outline: none;
 }
+
+#js {
+  background-image: url('./assets/javascript.svg');
+}
+#html {
+  background-image: url('./assets/html.svg');
+}
+#css {
+  background-image: url('./assets/css.svg');
+}
+
 
 .grid {
   display: grid;
