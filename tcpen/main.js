@@ -60,8 +60,8 @@ function createHtml({html, css, js}){
         </style>
     </head>
       <body>
-        <script>${js}</script>
         ${html}
+        <script>${js}</script>
       </body>
   </html>
   `
