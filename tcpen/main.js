@@ -1,5 +1,5 @@
 import './style.css'
-import Split from 'split-grid'
+import Split from './node_modules/split-grid'
 
 const $ = el => document.querySelector(el)
 
