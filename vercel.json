@@ -1,0 +1,6 @@
+{
+    "routes": [
+        {"handle": "filesustem"},
+        {"src": "/(.*)", "dest": "/index.html"}
+    ]
+}
