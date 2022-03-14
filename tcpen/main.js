@@ -1,6 +1,18 @@
 import './style.css'
+import Split from 'split-grid'
 
 const $ = el => document.querySelector(el)
+
+Split({
+    columnGutters: [{
+        track: 1,
+        element: $('.gutter-col-1'),
+    }],
+    rowGutters: [{
+        track: 1,
+        element: $('.gutter-row-1'),
+    }]
+})
 
 const $js = $('#js');
 const $css = $('#css');

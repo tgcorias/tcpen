@@ -10,24 +10,29 @@
     
     <div id="app">
 
-      <div>
-        <label>HTML</label>
-        <textarea id="html"></textarea>
-      </div>
 
-      <div>
-        <label>CSS</label>
-        <textarea id="css"></textarea>
-      </div>
+      <div class="grid">
+        <div>
+            <textarea placeholder="// HTML" id="html"></textarea>
+        </div>
 
-      <div>
-        <label>JS</label>
-        <textarea id="js"></textarea>
-      </div>
+        <div class="gutter-col gutter-col-1"></div>
 
-      <iframe>
-      </iframe>
+        <div>
+            <textarea placeholder="// CSS" id="css"></textarea>
+        </div>
 
+        <div>
+            <textarea placeholder="// Javascript" id="js"></textarea> 
+        </div>
+
+        <div class="gutter-row gutter-row-1"></div>
+
+        <div>
+            <iframe></iframe>
+        </div>
+
+        </div>
 
     </div>
     <script type="module" src="/main.js"></script>
